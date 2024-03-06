@@ -28,14 +28,13 @@
             data.items.forEach(item => {
                 const { coords: { lat, long }, locationName, magnitude, dateTime } = item;
 
-                // Crea un marcador con su popup personalizado
                 L.marker([lat, long])
                     .addTo(map)
                     .bindPopup(`
                 <a href="#" title="Lat: ${lat}, Long: ${long}">${locationName}</a>
                 <br>Magnitud: ${magnitude}
                 <br>Fecha: ${dateTime}
-            `); // El contenido del popup se crea aquí con la información tratada
+            `);
             });
         })
         .catch(error => console.error('Error al cargar los datos del terremoto:', error));
