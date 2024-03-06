@@ -9,7 +9,7 @@ if (isset($xml->channel)) {
     $json['items'] = [];
 
     foreach ($channel->item as $item) {
-        // Usar regex para extraer los datos
+        
         preg_match('/magnitud ([0-9.]+) en (.+) en la fecha ([0-9\/]+ [0-9:]+) en la siguiente localización: ([0-9.-]+),([0-9.-]+)/', $item->description, $matches);
 
         $magnitude = $matches[1] ?? '';
